@@ -28,7 +28,10 @@ export default function Container({children}) {
         setcPos(prev => prev.map((c, i) => {
             if(i !== drag) return c;
             const {width, height} = component.current.getBoundingClientRect();
-            const [newX, newY] = [c.x + movementX, c.y + movementY]
+            const [newX, newY] = [
+                    c.x + movementX > 0 ? c.x + movementX : 0 , 
+                    c.y + movementY > 0 ? c.y + movementY : 0
+                ];
             return {
                 x: newX + 100 > width ? width - 100 : newX, 
                 y: newY + 50 > height ? height - 50 : newY,
@@ -51,6 +54,7 @@ export default function Container({children}) {
                     pos={{x: cPos[i].x, y: cPos[i].y}}
                     key={i}
                     onDragStart={e => handleDrag(e, i)}
+                    onDragEnd={e => handleDrag(e, null)}
                 >
                     {child}
                 </Item>

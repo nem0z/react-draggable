@@ -10,6 +10,8 @@
     position: absolute;
     background-color: red;
 
+    cursor: grab;
+
     width: 100px;
     height: 50px;
 }
