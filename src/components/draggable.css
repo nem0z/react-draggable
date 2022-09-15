@@ -1,0 +1,15 @@
+.DraggableContainer {
+    position: relative;
+    width: 800px;
+    height: 500px;
+
+    border: 1px solid black;
+}
+
+.DraggableItem {
+    position: absolute;
+    background-color: red;
+
+    width: 100px;
+    height: 50px;
+}
