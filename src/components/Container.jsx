@@ -17,7 +17,7 @@ export default function Container({children}) {
 
     const handleDrag = (e, dragValue) => {
         e.preventDefault();
-        setDrag(dragValue);
+        setDrag(prev => prev || dragValue);
     }
 
     const handleMouseMove = e => {
