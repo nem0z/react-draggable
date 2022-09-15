@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-export default function Item({children, pos, onDragStart, onDragEnd}) {
+export default function Item({children, pos, onDragStart}) {
 
     return (
         <div 
@@ -8,8 +8,6 @@ export default function Item({children, pos, onDragStart, onDragEnd}) {
             draggable="true"
             style={{left: pos.x, top: pos.y}}
 			onDragStart={onDragStart}
-            onMouseLeave={onDragEnd}
-            onMouseUp={onDragEnd}
         >
             {children}
         </div>

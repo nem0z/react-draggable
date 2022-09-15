@@ -42,6 +42,8 @@ export default function Container({children}) {
             className="DraggableContainer" 
             onMouseMove={handleMouseMove}
             ref={component}
+            onMouseLeave={e => handleDrag(e, null)}
+            onMouseUp={e => handleDrag(e, null)}
         >
             <h1>Container</h1>
             {Children.toArray(children).map((child, i) => 
@@ -49,7 +51,6 @@ export default function Container({children}) {
                     pos={{x: cPos[i].x, y: cPos[i].y}}
                     key={i}
                     onDragStart={e => handleDrag(e, i)}
-                    onDragEnd={e => handleDrag(e, null)}
                 >
                     {child}
                 </Item>
